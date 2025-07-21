@@ -102,7 +102,7 @@ section#CV h3{
 section#CV ul li::marker, li{
     content: "✦";
     font-size: 1.2 em;
-    text-transform: lowercase;
+    text-transform: none;
     list-style-position: outside;
     padding-left: 20px;
     line-height: 25px;
