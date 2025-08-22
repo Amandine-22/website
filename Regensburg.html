@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallgeschichte und Klimaprozess - Präsentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a8e6cf 0%, #88d8a3 50%, #7fcdcd 100%);
+            color: #2d5016;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 500px;
+            display: none;
+        }
+        
+        .slide h1 {
+            color: #2e7d32;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #66bb6a;
+            padding-bottom: 15px;
+        }
+        
+        .slide h2 {
+            color: #388e3c;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .slide h3 {
+            color: #4caf50;
+            font-size: 1.5em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .slide p, .slide li {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        
+        .slide ul {
+            margin-left: 30px;
+        }
+        
+        .slide li {
+            margin: 8px 0;
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(46, 125, 50, 0.95);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        button {
+            background: white;
+            color: #2e7d32;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover:not(:disabled) {
+            background: #e8f5e9;
+            transform: scale(1.05);
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .counter {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 0 15px;
+        }
+        
+        .title-slide {
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .title-slide h1, .title-slide h2 {
+            color: white;
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .highlight-box {
+            background: #f1f8e9;
+            border-left: 5px solid #8bc34a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .timeline-item {
+            background: #f9fbe7;
+            border-left: 4px solid #8bc34a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #a5d6a7;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #81c784;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background: #f1f8e9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- FOLIE 1 -->
+        <div class="slide title-slide" style="display: block;">
+            <h1>'Fallgeschichte' und Klimaprozess</h1>
+            <h2>Recht und Literatur im Bündnis gegen die Klimakatastrophe</h2>
+            <br><br>
+            <p style="font-size: 2em; font-weight: bold;">Dr. Alexandra JUSTER</p>
+            <br><br>
+            <p style="font-size: 1.3em;">
+                <strong>Von der Zukunft her denken: Erzählkulturen gegen die Klimaerwärmung</strong><br><br>
+                Universität Regensburg<br>
+                18.-20. September 2025
+            </p>
+        </div>
+
+        <!-- FOLIE 2 -->
+        <div class="slide">
+            <h1>Gliederung</h1>
+            <ol style="font-size: 1.3em; line-height: 2;">
+                <li><strong>Ausgangslage:</strong> Das Kommunikationsdilemma im Klimarecht</li>
+                <li><strong>Analyse:</strong> Klimarechtsstreit als gesellschaftliches Phänomen</li>
+                <li><strong>Theoretischer Rahmen:</strong> Die Fallgeschichte als Genre</li>
+                <li><strong>Praxis:</strong> Fallbeispiel Lliuya vs. RWE</li>
+                <li><strong>Methodik:</strong> Narrative Strategien</li>
+                <li><strong>Ausblick:</strong> Potenziale und Grenzen</li>
+            </ol>
+        </div>
+
+        <!-- FOLIE 3 -->
+        <div class="slide">
+            <h1>Das Kommunikationsdilemma im Klimarecht</h1>
+            
+            <h3>Strukturelle Barrieren:</h3>
+            <ul>
+                <li>Hochkomplexe juristische Verfahren</li>
+                <li>Abstrakte Kausalitätsketten</li>
+                <li>Technische Fachsprache</li>
+                <li>Langwierige Prozessdauer</li>
+            </ul>
+            
+            <h3>Gesellschaftliche Folgen:</h3>
+            <ul>
+                <li>Mangelnde öffentliche Wahrnehmung</li>
+                <li>Fehlendes Verständnis für Rechtsfortschritte</li>
+                <li>Geringe emotionale Bindung</li>
+                <li>Ausbleibende Mobilisierung</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <strong>Zentrale These:</strong> Die narrative Vermittlung durch Fallgeschichten kann die Kluft zwischen juristischer Expertise und gesellschaftlicher Teilhabe überbrücken.
+            </div>
+        </div>
+
+        <!-- FOLIE 4 -->
+        <div class="slide">
+            <h1>Evolution der Klimarechtsstreitigkeiten</h1>
+            
+            <div class="timeline-item">
+                <strong>1. Generation (2005-2015):</strong><br>
+                • Fokus auf Verfahrensfragen<br>
+                • Klagebefugnis und Zuständigkeit<br>
+                • Beispiel: Massachusetts v. EPA (2007)
+            </div>
+            
+            <div class="timeline-item">
+                <strong>2. Generation (2015-2020):</strong><br>
+                • Menschenrechtsbasierte Ansätze<br>
+                • Staatliche Schutzpflichten<br>
+                • Beispiel: Urgenda v. Niederlande (2015-2019)
+            </div>
+            
+            <div class="timeline-item">
+                <strong>3. Generation (2020-heute):</strong><br>
+                • Unternehmenshaftung<br>
+                • Intergenerationale Gerechtigkeit<br>
+                • Beispiele: Shell-Urteil (2021), BVerfG-Klimabeschluss (2021)
+            </div>
+        </div>
+
+        <!-- FOLIE 5 -->
+        <div class="slide">
+            <h1>Klimaklagen weltweit: Zahlen und Trends</h1>
+            
+            <table>
+                <tr>
+                    <th>Region</th>
+                    <th>Anzahl Klagen (2025)</th>
+                    <th>Erfolgsquote</th>
+                    <th>Hauptklagegründe</th>
+                </tr>
+                <tr>
+                    <td>Europa</td>
+                    <td>458</td>
+                    <td>34%</td>
+                    <td>Menschenrechte, Schutzpflichten</td>
+                </tr>
+                <tr>
+                    <td>Nordamerika</td>
+                    <td>1.847</td>
+                    <td>28%</td>
+                    <td>Regulatory challenges, tort claims</td>
+                </tr>
+                <tr>
+                    <td>Globaler Süden</td>
+                    <td>187</td>
+                    <td>41%</td>
+                    <td>Anpassung, Loss & Damage</td>
+                </tr>
+                <tr>
+                    <td>Asien-Pazifik</td>
+                    <td>312</td>
+                    <td>31%</td>
+                    <td>Umweltstandards, Unternehmenshaftung</td>
+                </tr>
+            </table>
+            
+            <div class="highlight-box">
+                <strong>Problem:</strong> Trotz steigender Fallzahlen erreichen nur 2% der Bevölkerung direkte Kenntnis von Klimaprozessen
+            </div>
+        </div>
+
+        <!-- FOLIE 6 -->
+        <div class="slide">
+            <h1>Die Fallgeschichte als literarisches Genre</h1>
+            
+            <div class="highlight-box">
+                <h3>Definition:</h3>
+                Die Fallgeschichte ist eine <strong>hybride Textsorte</strong>, die reale Rechtsfälle durch <strong>narrative Strategien</strong> in eine für Laien zugängliche Form transformiert.
+            </div>
+            
+            <h3>Historische Wurzeln:</h3>
+            <ul>
+                <li>François Gayot de Pitaval (1734)</li>
+                <li>Paul Johann Anselm Feuerbach (1808)</li>
+                <li>Heinrich von Kleist: "Michael Kohlhaas"</li>
+                <li>Theodor Fontane: Kriminalnovellen</li>
+            </ul>
+            
+            <h3>Moderne Ausprägungen:</h3>
+            <ul>
+                <li>Ferdinand von Schirach: "Verbrechen"</li>
+                <li>Juli Zeh: "Corpus Delicti"</li>
+                <li>True Crime Podcasts</li>
+                <li>Dokumentarische Gerichtsdramen</li>
+            </ul>
+        </div>
+
+        <!-- FOLIE 7 -->
+        <div class="slide">
+            <h1>Narrative Elemente der Fallgeschichte</h1>
+            
+            <h3>📖 Personalisierung</h3>
+            <p>Individuelle Schicksale statt abstrakter Rechtsfragen</p>
+            
+            <h3>⏱️ Chronologisierung</h3>
+            <p>Zeitliche Dramaturgie statt juristischer Systematik</p>
+            
+            <h3>🎭 Spannungsbogen</h3>
+            <p>Konflikt - Eskalation - Auflösung</p>
+            
+            <h3>💭 Innenperspektive</h3>
+            <p>Emotionen und Motivationen der Beteiligten</p>
+            
+            <h3>🌍 Kontextualisierung</h3>
+            <p>Gesellschaftliche und historische Einbettung</p>
+            
+            <h3>🔍 Detailreichtum</h3>
+            <p>Szenische Darstellung statt juristischer Abstraktion</p>
+        </div>
+
+        <!-- FOLIE 8 -->
+        <div class="slide">
+            <h1>Fallbeispiel: Der Lliuya-Prozess</h1>
+            
+            <div class="highlight-box">
+                <strong>Saúl Luciano Lliuya</strong>, ein peruanischer Bergführer aus Huaraz, verklagt den deutschen Energiekonzern <strong>RWE</strong> auf anteilige Übernahme von Schutzmaßnahmen gegen eine drohende Gletscherflut.
+            </div>
+            
+            <h3>Klägerseite:</h3>
+            <ul>
+                <li>Existenzbedrohung durch Gletscherschmelze</li>
+                <li>RWE als größter CO₂-Emittent Europas</li>
+                <li>0,47% globaler Emissionen = 0,47% der Kosten</li>
+            </ul>
+            
+            <h3>Beklagtenseite:</h3>
+            <ul>
+                <li>Keine direkte Kausalität nachweisbar</li>
+                <li>Globales Problem, lokale Klage</li>
+                <li>Präzedenzfall-Gefahr</li>
+            </ul>
+            
+            <div class="highlight-box" style="margin-top: 30px; background: #fff3e0; border-left-color: #ff9800;">
+                <strong>Urteil vom 28. Mai 2025:</strong> Das OLG Hamm weist Lliuyas Entschädigungsanspruch zurück, bestätigt aber die prinzipielle Verantwortung der Großemittenten für Klimaschäden.
+            </div>
+        </div>
+
+        <!-- FOLIE 9 -->
+        <div class="slide">
+            <h1>Von der Klageschrift zur Fallgeschichte</h1>
+            
+            <table>
+                <tr>
+                    <th>Juristische Darstellung</th>
+                    <th>Narrative Transformation</th>
+                </tr>
+                <tr>
+                    <td>"Der Antragsteller begehrt die Feststellung der Haftung gem. § 1004 BGB"</td>
+                    <td>"Saúl blickt jeden Morgen auf den bedrohlich steigenden Wasserspiegel..."</td>
+                </tr>
+                <tr>
+                    <td>"Kausalitätsnachweis zwischen Emissionen und Schadenseintritt"</td>
+                    <td>"Die unsichtbare Verbindung zwischen Rheinland und Anden"</td>
+                </tr>
+                <tr>
+                    <td>"Störereigenschaft des Beklagten"</td>
+                    <td>"David gegen Goliath: Ein Bergführer fordert einen Energieriesen heraus"</td>
+                </tr>
+            </table>
+            
+            <div class="highlight-box" style="margin-top: 30px;">
+                "Erst durch die Geschichte wird aus dem Aktenzeichen 2 O 285/15 ein Mensch mit Namen, Gesicht und Schicksal."
+            </div>
+        </div>
+
+        <!-- FOLIE 10 -->
+        <div class="slide">
+            <h1>Vielen Dank für Ihre Aufmerksamkeit!</h1>
+            
+            <div style="text-align: center; margin-top: 100px;">
+                <h2>Kontakt:</h2>
+                <p style="font-size: 1.8em; margin-top: 50px;">
+                    Dr. Alexandra JUSTER<br><br>
+                    <strong>alexandra.juster@uibk.ac.at</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="controls">
+        <button onclick="previousSlide()">← Zurück</button>
+        <span class="counter">
+            <span id="current">1</span> / <span id="total">10</span>
+        </span>
+        <button onclick="nextSlide()">Weiter →</button>
+    </div>
+
+    <script>
+        // Einfaches JavaScript für die Navigation
+        var slides = document.getElementsByClassName('slide');
+        var currentSlide = 0;
+        var totalSlides = slides.length;
+        
+        // Total anzeigen
+        document.getElementById('total').innerText = totalSlides;
+        
+        function showSlide(n) {
+            // Alle Folien verstecken
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            
+            // Aktuelle Folie anzeigen
+            slides[n].style.display = 'block';
+            
+            // Nummer aktualisieren
+            document.getElementById('current').innerText = n + 1;
+            
+            // Buttons aktivieren/deaktivieren
+            var buttons = document.getElementsByTagName('button');
+            buttons[0].disabled = (n === 0);
+            buttons[1].disabled = (n === totalSlides - 1);
+            
+            currentSlide = n;
+        }
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                showSlide(currentSlide + 1);
+            }
+        }
+        
+        function previousSlide() {
+            if (currentSlide > 0) {
+                showSlide(currentSlide - 1);
+            }
+        }
+        
+        // Tastatur-Navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+        
+        // Start
+        showSlide(0);
+    </script>
+</body>
+</html>
+
+
