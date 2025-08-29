@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Narrazioni della condanna a morte in Francia</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       
+       body {
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           background: linear-gradient(135deg, #f5f3f0 0%, #e8e5e0 100%);
+           overflow-x: hidden;
+       }
+       
+       .presentation-container {
+           max-width: 1200px;
+           margin: 0 auto;
+           padding: 20px;
+       }
+       
+       .slide {
+           background: white;
+           min-height: 600px;
+           margin: 20px 0;
+           padding: 60px;
+           border-radius: 15px;
+           box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+           position: relative;
+           page-break-after: always;
+       }
+       
+       .slide-number {
+           position: absolute;
+           bottom: 20px;
+           right: 30px;
+           color: #8B4513;
+           font-size: 14px;
+           font-weight: 500;
+       }
+       
+       h1 {
+           color: #2c3e50;
+           font-size: 42px;
+           margin-bottom: 30px;
+           text-align: center;
+           font-weight: 700;
+       }
+       
+       h2 {
+           color: #34495e;
+           font-size: 32px;
+           margin-bottom: 25px;
+           border-bottom: 3px solid #8B4513;
+           padding-bottom: 10px;
+       }
+       
+       h3 {
+           color: #1e3a5f;
+           font-size: 24px;
+           margin: 20px 0;
+           font-weight: 600;
+       }
+       
+       .subtitle {
+           text-align: center;
+           color: #7f8c8d;
+           font-size: 20px;
+           margin-bottom: 20px;
+       }
+       
+       .author {
+           text-align: center;
+           color: #2c3e50;
+           font-size: 22px;
+           margin-top: 40px;
+       }
+       
+       .event-info {
+           background: #8B4513;
+           color: white;
+           padding: 15px 30px;
+           text-align: center;
+           margin-top: 40px;
+           border-radius: 8px;
+           font-size: 18px;
+       }
+       
+       .timeline {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           margin: 40px 0;
+           position: relative;
+       }
+       
+       .timeline::before {
+           content: '';
+           position: absolute;
+           width: 100%;
+           height: 2px;
+           background: #8B4513;
+           top: 50%;
+           z-index: 0;
+       }
+       
+       .timeline-item {
+           background: white;
+           border: 3px solid #8B4513;
+           border-radius: 10px;
+           padding: 15px;
+           text-align: center;
+           z-index: 1;
+           position: relative;
+           flex: 1;
+           margin: 0 10px;
+           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+       }
+       
+       .timeline-item .number {
+           background: #8B4513;
+           color: white;
+           width: 40px;
+           height: 40px;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin: 0 auto 10px;
+           font-weight: bold;
+           font-size: 18px;
+       }
+       
+       .timeline-item h4 {
+           color: #2c3e50;
+           font-size: 16px;
+           margin-bottom: 5px;
+       }
+       
+       .timeline-item p {
+           color: #7f8c8d;
+           font-size: 14px;
+       }
+       
+       .evidence-circle {
+           width: 400px;
+           height: 400px;
+           margin: 40px auto;
+           position: relative;
+       }
+       
+       .center-circle {
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           width: 150px;
+           height: 150px;
+           background: #8B4513;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: white;
+           font-weight: bold;
+           text-align: center;
+           font-size: 18px;
+           box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+       }
+       
+       .evidence-item {
+           position: absolute;
+           width: 140px;
+           padding: 15px;
+           background: #f8f9fa;
+           border-radius: 10px;
+           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+           text-align: center;
+           font-size: 14px;
+           border: 2px solid #e9ecef;
+       }
+       
+       .evidence-item:nth-child(2) { top: 0; left: 50%; transform: translateX(-50%); }
+       .evidence-item:nth-child(3) { top: 50%; right: 0; transform: translateY(-50%); }
+       .evidence-item:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%); }
+       .evidence-item:nth-child(5) { top: 50%; left: 0; transform: translateY(-50%); }
+       
+       .comparison-table {
+           width: 100%;
+           border-collapse: collapse;
+           margin: 30px 0;
+           box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+           border-radius: 10px;
+           overflow: hidden;
+       }
+       
+       .comparison-table th {
+           background: #1e3a5f;
+           color: white;
+           padding: 20px;
+           text-align: left;
+           font-size: 18px;
+       }
+       
+       .comparison-table td {
+           padding: 20px;
+           border-bottom: 1px solid #e9ecef;
+           font-size: 16px;
+       }
+       
+       .comparison-table tr:nth-child(even) {
+           background: #f8f9fa;
+       }
+       
+       .comparison-table tr:hover {
+           background: #e3f2fd;
+           transition: background 0.3s;
+       }
+       
+       .question-card {
+           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+           color: white;
+           padding: 30px;
+           border-radius: 15px;
+           margin: 20px 0;
+           box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+       }
+       
+       .question-card h3 {
+           color: white;
+           font-size: 28px;
+           margin-bottom: 15px;
+       }
+       
+       .question-card p {
+           font-size: 18px;
+           line-height: 1.6;
+           opacity: 0.95;
+       }
+       
+       .highlight-box {
+           background: #fff3cd;
+           border-left: 5px solid #ffc107;
+           padding: 20px;
+           margin: 20px 0;
+           border-radius: 5px;
+       }
+       
+       .key-point {
+           background: #d4edda;
+           border-left: 5px solid #28a745;
+           padding: 15px 20px;
+           margin: 15px 0;
+           border-radius: 5px;
+           font-size: 16px;
+       }
+       
+       .quote-box {
+           background: #e7f3ff;
+           border-left: 5px solid #1e3a5f;
+           padding: 25px;
+           margin: 30px 0;
+           font-style: italic;
+           font-size: 18px;
+           position: relative;
+           border-radius: 5px;
+       }
+       
+       .quote-box::before {
+           content: '"';
+           font-size: 60px;
+           color: #1e3a5f;
+           opacity: 0.2;
+           position: absolute;
+           top: -10px;
+           left: 10px;
+       }
+       
+       .program-list {
+           list-style: none;
+           padding: 0;
+       }
+       
+       .program-list li {
+           background: white;
+           border: 2px solid #e9ecef;
+           padding: 20px;
+           margin: 15px 0;
+           border-radius: 10px;
+           position: relative;
+           padding-left: 50px;
+           font-size: 18px;
+           transition: all 0.3s;
+       }
+       
+       .program-list li:hover {
+           border-color: #8B4513;
+           transform: translateX(10px);
+           box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+       }
+       
+       .program-list li::before {
+           content: '▶';
+           position: absolute;
+           left: 20px;
+           color: #8B4513;
+           font-size: 16px;
+       }
+       
+       .jury-decision {
+           background: #dc3545;
+           color: white;
+           padding: 30px;
+           border-radius: 10px;
+           text-align: center;
+           margin: 30px 0;
+       }
+       
+       .jury-decision h3 {
+           color: white;
+           font-size: 32px;
+           margin-bottom: 20px;
+           text-transform: uppercase;
+       }
+       
+       .final-slide {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           min-height: 600px;
+           text-align: center;
+       }
+       
+       .final-slide h1 {
+           font-size: 72px;
+           color: #8B4513;
+           margin-bottom: 30px;
+       }
+       
+       .final-slide p {
+           font-size: 36px;
+           color: #2c3e50;
+       }
+       
+       .navigation {
+           position: fixed;
+           bottom: 30px;
+           right: 30px;
+           display: flex;
+           gap: 10px;
+           z-index: 1000;
+       }
+       
+       .nav-btn {
+           background: #8B4513;
+           color: white;
+           border: none;
+           padding: 10px 20px;
+           border-radius: 5px;
+           cursor: pointer;
+           font-size: 16px;
+           transition: all 0.3s;
+       }
+       
+       .nav-btn:hover {
+           background: #6B3410;
+           transform: translateY(-2px);
+       }
+       
+       .toc {
+           background: #f8f9fa;
+           padding: 30px;
+           border-radius: 10px;
+           margin: 30px 0;
+       }
+       
+       .toc h3 {
+           color: #1e3a5f;
+           margin-bottom: 20px;
+       }
+       
+       .toc ol {
+           list-style: none;
+           counter-reset: toc-counter;
+       }
+       
+       .toc li {
+           counter-increment: toc-counter;
+           margin: 15px 0;
+           font-size: 18px;
+           position: relative;
+           padding-left: 40px;
+       }
+       
+       .toc li::before {
+           content: counter(toc-counter);
+           position: absolute;
+           left: 0;
+           background: #8B4513;
+           color: white;
+           width: 30px;
+           height: 30px;
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-weight: bold;
+       }
+       
+       @media print {
+           .navigation {
+               display: none;
+           }
+           .slide {
+               page-break-after: always;
+           }
+       }
+   </style>
+</head>
+<body>
+   <div class="presentation-container">
+       
+       <!-- Slide 1: Titolo -->
+       <div class="slide" id="slide1">
+           <h1>Narrazioni della condanna a morte in Francia: la vicenda paradigmatica di Roger Bontems</h1>
+           <p class="author">Alexandra Juster, Università di Innsbruck</p>
+           <div class="event-info">
+               "Il racconto della giustizia: quando l'arte entra in tribunale"<br>
+               Workshop Università di Brescia • 28-29 ottobre 2025
+           </div>
+           <span class="slide-number">1/21</span>
+       </div>
+       
+       <!-- Slide 2: Sommario -->
+       <div class="slide" id="slide2">
+           <h2>Programma della Presentazione</h2>
+           <div class="toc">
+               <ol>
+                   <li>Il percorso storico fino all'abolizione della pena di morte in Francia</li>
+                   <li>Letteratura: L'Exécution (1973) di Robert Badinter</li>
+                   <li>Film: L'Abolition (2009)</li>
+                   <li>Disegno (fumetti): L'Abolition (2019)</li>
+                   <li>Analisi comparata delle tre forme artistiche</li>
+                   <li>La prova, l'errore giudiziario e la giustizia</li>
+               </ol>
+           </div>
+           <span class="slide-number">2/21</span>
+       </div>
+       
+       <!-- Slide 3: Percorso storico -->
+       <div class="slide" id="slide3">
+           <h2>Il percorso storico fino all'abolizione della pena di morte in Francia</h2>
+           <div class="timeline">
+               <div class="timeline-item">
+                   <div class="number">1</div>
+                   <h4>Cesare Beccaria</h4>
+                   <p>Dei delitti e delle pene (1764)</p>
+               </div>
+               <div class="timeline-item">
+                   <div class="number">2</div>
+                   <h4>Abate Mollet</h4>
+                   <p>Traduzione di Beccaria (1766)</p>
+               </div>
+               <div class="timeline-item">
+                   <div class="number">3</div>
+                   <h4>Le Peletier</h4>
+                   <p>de Saint Fargeau (1791)</p>
+               </div>
+               <div class="timeline-item">
+                   <div class="number">4</div>
+                   <h4>Victor Tracy</h4>
+                   <p>1830</p>
+               </div>
+               <div class="timeline-item">
+                   <div class="number">5</div>
+                   <h4>Victor Hugo</h4>
+                   <p>1802-1885</p>
+               </div>
+               <div class="timeline-item">
+                   <div class="number">6</div>
+                   <h4>Robert Badinter</h4>
+                   <p>1928-2024<br><strong>Abolizione 1981</strong></p>
+               </div>
+           </div>
+           <span class="slide-number">3/21</span>
+       </div>
+       
+       <!-- Slide 4: Il caso Buffet-Bontems -->
+       <div class="slide" id="slide4">
+           <h2>Letteratura: L'Exécution di Robert Badinter</h2>
+           <h3 style="text-align: center; color: #8B4513;">Il caso Buffet-Bontems - 1972</h3>
+           
+           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+               <div class="key-point">
+                   <strong>✓ Prova che Bontems non ha ucciso</strong><br>
+                   Evidenze documentate che dimostrano l'innocenza diretta
+               </div>
+               <div class="key-point">
+                   <strong>⚖️ Due perizie contraddittorie</strong><br>
+                   Conflitto tra le analisi degli esperti
+               </div>
+               <div class="key-point">
+                   <strong>❓ Dichiarazioni ambigue di Buffet</strong><br>
+                   Testimonianze non chiare del complice
+               </div>
+               <div class="key-point">
+                   <strong>📊 Sondaggi: 63% per la pena di morte</strong><br>
+                   Forte pressione dell'opinione pubblica
+               </div>
+           </div>
+           
+           <div class="highlight-box" style="margin-top: 30px;">
+               <strong>Contesto sociale:</strong> Richiesta di vendetta del pubblico in un periodo di forte tensione sociale
+           </div>
+           <span class="slide-number">4/21</span>
+       </div>
+       
+       <!-- Slide 5: Anello di prove -->
+       <div class="slide" id="slide5">
+           <h2>ANELLO DI PROVE</h2>
+           <div class="evidence-circle">
+               <div class="center-circle">
+                   Bontems<br>non ha<br>ucciso
+               </div>
+               <div class="evidence-item">
+                   <strong>Nessuna traccia di sangue</strong> sul coltellino di Bontems
+               </div>
+               <div class="evidence-item">
+                   <strong>Prima perizia</strong> conferma l'innocenza
+               </div>
+               <div class="evidence-item">
+                   <strong>Posizione presso la porta</strong> al momento dell'attacco
+               </div>
+               <div class="evidence-item">
+                   <strong>Coltellino chiuso</strong> nella tasca dei pantaloni
+               </div>
+           </div>
+           <span class="slide-number">5/21</span>
+       </div>
+       
+       <!-- Slide 6: Decisione della giuria -->
+       <div class="slide" id="slide6">
+           <h2>La decisione della giuria</h2>
+           <div class="jury-decision">
+               <h3>CONDANNA A MORTE DI ENTRAMBI</h3>
+           </div>
+           
+           <div class="quote-box">
+               'Bontems è colpevole, nelle stesse condizioni di tempo e di luogo, di aver ucciso la signora...?'
+               Risposta: <strong>'NO a maggioranza dei voti'</strong>.<br><br>
+               
+               'Buffet ha ucciso la signora...? <strong>SÌ</strong>. - Bontems ha agito come complice di Buffet? <strong>SÌ</strong>.
+               – Esistono circostanze attenuanti a favore di Buffet? <strong>NO</strong>' – Buffet fu condannato a morte.<br><br>
+               
+               'Esistono circostanze attenuanti a favore di Bontems? La risposta fu: <strong>'NO a maggioranza dei voti'</strong>.
+               Ciò significava la pena di morte (E 138).
+           </div>
+           <span class="slide-number">6/21</span>
+       </div>
+       
+       <!-- Slide 7: Decisione del Presidente -->
+       <div class="slide" id="slide7">
+           <h2>La decisione del Presidente della Repubblica</h2>
+           <div class="jury-decision">
+               <h3>RIFIUTO DI CONCEDERE LA GRAZIA</h3>
+           </div>
+           
+           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;">
+               <div class="key-point" style="background: #f8d7da; border-color: #dc3545;">
+                   <strong>📅 Periodo pre-elettorale</strong><br>
+                   Pressioni politiche intense
+               </div>
+               <div class="key-point" style="background: #f8d7da; border-color: #dc3545;">
+                   <strong>📊 Opinione pubblica</strong><br>
+                   Favorevole alla pena di morte
+               </div>
+               <div class="key-point" style="background: #f8d7da; border-color: #dc3545;">
+                   <strong>🏛️ Interesse politico</strong><br>
+                   Calcoli elettorali
+               </div>
+           </div>
+           <span class="slide-number">7/21</span>
+       </div>
+       
+       <!-- Slide 8: Il telefilm -->
+       <div class="slide" id="slide8">
+           <h2>Il telefilm L'Abolition (2009), parte 1</h2>
+           
+           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+               <div>
+                   <h3>Elementi narrativi</h3>
+                   <ul style="list-style: none; padding: 0;">
+                       <li style="margin: 15px 0;">📚 <strong>Basato sui fatti</strong> del caso Buffet-Bontems</li>
+                       <li style="margin: 15px 0;">❤️ <strong>Componente emotiva</strong> molto più forte</li>
+                       <li style="margin: 15px 0;">👤 <strong>Episodi personali</strong> di Badinter</li>
+                       <li style="margin: 15px 0;">👨‍👩‍👦 <strong>Genitori di Bontems</strong> rappresentati</li>
+                   </ul>
+               </div>
+               <div>
+                   <h3>Tecniche cinematografiche</h3>
+                   <ul style="list-style: none; padding: 0;">
+                       <li style="margin: 15px 0;">🎭 I <strong>sentimenti e le espressioni</strong> di Bontems sono enfatizzati</li>
+                       <li style="margin: 15px 0;">⚖️ <strong>Forte contrasto</strong> tra la maestria di Badinter e la goffaggine di Bontems</li>
+                   </ul>
+               </div>
+           </div>
+           <span class="slide-number">8/21</span>
+       </div>
+       
+       <!-- Slide 9: Scene chiave del film -->
+       <div class="slide" id="slide9">
+           <h2>Telefilm: Scene chiave</h2>
+           
+           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
+               <div style="background: #f0f0f0; padding: 30px; border-radius: 10px; text-align: center;">
+                   <div style="background: #1e3a5f; color: white; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                       <h3 style="color: white;">Scena 1: L'interrogatorio</h3>
+                   </div>
+                   <div style="height: 200px; background: linear-gradient(45deg, #e0e0e0 25%, transparent 25%, transparent 75%, #e0e0e0 75%, #e0e0e0), linear-gradient(45deg, #e0e0e0 25%, transparent 25%, transparent 75%, #e0e0e0 75%, #e0e0e0); background-size: 20px 20px; background-position: 0 0, 10px 10px; display: flex; align-items: center; justify-content: center; border: 2px solid #ccc;">
+                       <div style="background: white; padding: 20px; border-radius: 5px;">
+                           <p style="margin: 0;"><strong>Badinter al perito:</strong><br>"Le prove sono insufficienti"</p>
+                       </div>
+                   </div>
+               </div>
+               <div style="background: #f0f0f0; padding: 30px; border-radius: 10px; text-align: center;">
+                   <div style="background: #8B4513; color: white; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
+                       <h3 style="color: white;">Scena 2: La perizia</h3>
+                   </div>
+                   <div style="height: 200px; background: linear-gradient(45deg, #e0e0e0 25%, transparent 25%, transparent 75%, #e0e0e0 75%, #e0e0e0), linear-gradient(45deg, #e0e0e0 25%, transparent 25%, transparent 75%, #e0e0e0 75%, #e0e0e0); background-size: 20px 20px; background-position: 0 0, 10px 10px; display: flex; align-items: center; justify-content: center; border: 2px solid #ccc;">
+                       <div style="background: white; padding: 20px; border-radius: 5px;">
+                           <p style="margin: 0;"><strong>Bontems legge:</strong><br>"Nessuna traccia di sangue"</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="quote-box">
+               <h3>📚 Richiamo degli insegnamenti di Henry Torrès</h3>
+               <p>'È molto più facile condannare che assolvere'. Per l'avvocato difensore, il suo compito è difendere il suo assistito, e non di preoccuparsi della giustizia. Il cliente non è mai colpevole agli occhi dell'avvocato difensore.</p>
+               
+               <p style="margin-top: 20px;">"La morte del condannato è l'ingiustizia allo stato puro, è l'unica cosa che priva l'avvocato della sua ragione d'essere, perché è definitiva, perché non può più ottenere nulla, perché non potrà mai più ottenere nulla per colui che ha difeso. È come un muro, un muro liscio" (E 14).</p>
+           </div>
+           <span class="slide-number">9/21</span>
+       </div>
+       
+       <!-- Slide 10: La Guillotina -->
+       <div class="slide" id="slide10">
+           <h2>Telefilm: Crudeltà della scena di morte - La Guillotina</h2>
+           
+           <div style="margin: 30px 0;">
+               <!-- Rappresentazione visiva stilizzata della scena -->
+               <div style="background: #2c3e50; padding: 40px; border-radius: 10px; position: relative; overflow: hidden;">
+                   <!-- Cielo grigio dell'alba -->
+                   <div style="position: absolute; top: 0; left: 0; right: 0; height: 50%; background: linear-gradient(to bottom, #4a5568, #718096); opacity: 0.8;"></div>
+                   
+                   <!-- Silhouette della guillotina -->
+                   <div style="position: relative; text-align: center; z-index: 1;">
+                       <svg width="200" height="250" viewBox="0 0 200 250" style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));">
+                           <!-- Base -->
+                           <rect x="10" y="200" width="180" height="50" fill="#000"/>
+                           <!-- Montanti -->
+                           <rect x="30" y="50" width="15" height="150" fill="#000"/>
+                           <rect x="155" y="50" width="15" height="150" fill="#000"/>
+                           <!-- Traversa superiore -->
+                           <rect x="30" y="50" width="140" height="20" fill="#000"/>
+                           <!-- Lama (stilizzata) -->
+                           <polygon points="85,80 115,80 110,120 90,120" fill="#333" stroke="#000" stroke-width="2"/>
+                           <!-- Lunetta -->
+                           <circle cx="100" cy="180" r="25" fill="none" stroke="#000" stroke-width="8"/>
+                           <rect x="75" y="180" width="50" height="25" fill="#000"/>
+                       </svg>
+                   </div>
+                   
+                   <!-- Descrizione delle scene -->
+                   <div style="margin-top: 30px; color: white; text-align: center;">
+                       <h3 style="color: white; margin-bottom: 20px;">Sequenza delle immagini nel film:</h3>
+                       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 600px; margin: 0 auto;">
+                           <div style="background: rgba(0,0,0,0.5); padding: 15px; border-radius: 5px;">
+                               <strong>Cella n. 34</strong><br>
+                               Preparativi finali
+                           </div>
+                           <div style="background: rgba(0,0,0,0.5); padding: 15px; border-radius: 5px;">
+                               <strong>Alba grigia</strong><br>
+                               Atmosfera cupa
+                           </div>
+                           <div style="background: rgba(0,0,0,0.5); padding: 15px; border-radius: 5px;">
+                               <strong>Il condannato</strong><br>
+                               "Come un pacchetto"
+                           </div>
+                           <div style="background: rgba(0,0,0,0.5); padding: 15px; border-radius: 5px;">
+                               <strong>L'esecuzione</strong><br>
+                               L'orrore finale
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="key-point" style="background: #f8d7da; border-color: #dc3545; margin-top: 30px;">
+               <strong>Impatto visivo:</strong> Le immagini crude enfatizzano l'inumanità della pena capitale
+           </div>
+           <span class="slide-number">10/21</span>
+       </div>
+       
+       <!-- Slide 11: Contrasto Buffet-Bontems -->
+       <div class="slide" id="slide11">
+           <h2>Telefilm: Enfatizzazione del contrasto tra la colpevolezza di Buffet e l'innocenza di Bontems</h2>
+           
+           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+               <div style="background: #d4edda; padding: 30px; border-radius: 10px;">
+                   <h3 style="color: #155724;">Roger Bontems</h3>
+                   <ul style="list-style: none; padding: 0;">
+                       <li>✅ Non ha ucciso</li>
+                       <li>🤝 Rappresentato come goffo ma 'gentile'</li>
+                       <li>💔 Sensibile e umano</li>
+                       <li>😰 Vittima delle circostanze</li>
+                   </ul>
+               </div>
+               <div style="background: #f8d7da; padding: 30px; border-radius: 10px;">
+                   <h3 style="color: #721c24;">Claude Buffet</h3>
+                   <ul style="list-style: none; padding: 0;">
+                       <li>❌ Ha ucciso</li>
+                       <li>🧊 Blocco di ghiaccio privo di emozioni</li>
+                       <li>⚔️ Doppio omicidio molto crudele</li>
+                       <li>😈 Manipolatore</li>
+                   </ul>
+               </div>
+           </div>
+           <span class="slide-number">11/21</span>
+       </div>
+       
+       <!-- Slide 12: I fumetti -->
+       <div class="slide" id="slide12">
+           <h2>I fumetti L'Abolition (2019)</h2>
+           
+           <!-- Rappresentazione visiva delle pagine dei fumetti -->
+           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 30px 0;">
+               <!-- Prima vignetta: Apertura con la guillotina -->
+               <div style="background: #f8f9fa; border: 3px solid #333; padding: 15px; border-radius: 5px;">
+                   <div style="background: #333; color: white; padding: 10px; margin: -15px -15px 15px -15px; text-align: center;">
+                       <strong>Pagina di apertura</strong>
+                   </div>
+                   <div style="height: 200px; background: repeating-linear-gradient(45deg, #fff, #fff 10px, #f0f0f0 10px, #f0f0f0 20px); border: 2px solid #000; position: relative;">
+                       <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                           <div style="width: 60px; height: 80px; background: #000; margin: 0 auto;"></div>
+                           <div style="width: 80px; height: 10px; background: #000; margin: 5px auto;"></div>
+                           <p style="margin-top: 10px; font-weight: bold;">LA GUILLOTINA</p>
+                       </div>
+                   </div>
+               </div>
+               
+               <!-- Seconda vignetta: Bontems e Buffet -->
+               <div style="background: #f8f9fa; border: 3px solid #333; padding: 15px; border-radius: 5px;">
+                   <div style="background: #333; color: white; padding: 10px; margin: -15px -15px 15px -15px; text-align: center;">
+                       <strong>Il dialogo cruciale</strong>
+                   </div>
+                   <div style="height: 200px; background: white; border: 2px solid #000; padding: 10px; position: relative;">
+                       <!-- Balloon di dialogo -->
+                       <div style="background: white; border: 2px solid #000; border-radius: 50%; padding: 10px; position: absolute; top: 20px; left: 10px; max-width: 45%;">
+                           <small><strong>Bontems:</strong><br>"Claude, ti prego, non uccidere!"</small>
+                       </div>
+                       <div style="background: black; color: white; border-radius: 5px; padding: 10px; position: absolute; bottom: 20px; right: 10px; max-width: 45%;">
+                           <small><strong>Buffet:</strong><br>"..."</small>
+                       </div>
+                       <!-- Figure stilizzate -->
+                       <div style="position: absolute; bottom: 10px; left: 20px;">
+                           <div style="width: 30px; height: 40px; background: #888; border-radius: 5px;"></div>
+                       </div>
+                       <div style="position: absolute; bottom: 10px; right: 20px;">
+                           <div style="width: 30px; height: 40px; background: #000; border-radius: 5px;"></div>
+                       </div>
+                   </div>
+               </div>
+               
+               <!-- Terza vignetta: Il coltellino -->
+               <div style="background: #f8f9fa; border: 3px solid #333; padding: 15px; border-radius: 5px;">
+                   <div style="background: #333; color: white; padding: 10px; margin: -15px -15px 15px -15px; text-align: center;">
+                       <strong>La prova decisiva</strong>
+                   </div>
+                   <div style="height: 200px; background: white; border: 2px solid #000; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                       <!-- Rappresentazione del coltellino chiuso -->
+                       <div style="background: #8B4513; width: 80px; height: 20px; border-radius: 10px; border: 2px solid #000;"></div>
+                       <p style="margin-top: 15px; text-align: center; font-weight: bold;">COLTELLINO<br>CHIUSO</p>
+                       <p style="margin-top: 10px; font-size: 12px; color: #666;">Nessuna traccia di sangue</p>
+                   </div>
+               </div>
+           </div>
+           
+           <!-- Pannello inferiore con le scene del processo -->
+           <div style="background: #2c3e50; color: white; padding: 30px; border-radius: 10px; margin-top: 30px;">
+               <h3 style="color: white; text-align: center; margin-bottom: 20px;">Sequenza narrativa nei fumetti</h3>
+               <div style="display: flex; justify-content: space-between; align-items: center;">
+                   <div style="text-align: center; flex: 1;">
+                       <div style="font-size: 36px;">⚫</div>
+                       <p>Apertura:<br>La Guillotina</p>
+                   </div>
+                   <div style="flex: 0.5; text-align: center;">→</div>
+                   <div style="text-align: center; flex: 1;">
+                       <div style="font-size: 36px;">⚪</div>
+                       <p>Centro:<br>Il processo</p>
+                   </div>
+                   <div style="flex: 0.5; text-align: center;">→</div>
+                   <div style="text-align: center; flex: 1;">
+                       <div style="font-size: 36px;">⚫</div>
+                       <p>Chiusura:<br>La Guillotina</p>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="quote-box" style="margin-top: 30px;">
+               <strong>Messaggio visivo dei fumetti:</strong> "Un uomo che non ha ucciso non può essere condannato a morte..."
+           </div>
+           <span class="slide-number">12/21</span>
+       </div>
+       
+       <!-- Slide 13: Analisi comparata -->
+       <div class="slide" id="slide13">
+           <h2>Tre forme d'arte variano lo stesso tema: Punti chiave</h2>
+           
+           <table class="comparison-table">
+               <thead>
+                   <tr>
+                       <th>Forma artistica</th>
+                       <th>Rappresentazione</th>
+                       <th>Giustizia</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr style="background: #fff3cd;">
+                       <td><strong>📚 Letteratura</strong></td>
+                       <td>Descrizione dei fatti;<br>Prova che Bontems non ha ucciso</td>
+                       <td>Nel 1973: Mancata distinzione tra Buffet e Bontems – condanna a morte per complicità</td>
+                   </tr>
+                   <tr style="background: #cfe2ff;">
+                       <td><strong>🎬 Film</strong></td>
+                       <td>Forte componente emozionale e personale</td>
+                       <td>Bontems è chiaramente distinto da Buffet come l'uomo che non ha ucciso;<br>La condanna a morte è INGIUSTA</td>
+                   </tr>
+                   <tr style="background: #d4edda;">
+                       <td><strong>🎨 Fumetti</strong></td>
+                       <td>Dominanza dei colori nero-grigio-bianco</td>
+                       <td>La ingiusta crudeltà della Guillotina introduce e chiude i fumetti</td>
+                   </tr>
+               </tbody>
+           </table>
+           <span class="slide-number">13/21</span>
+       </div>
+       
+       <!-- Slide 14: Questione 1 -->
+       <div class="slide" id="slide14">
+           <h2>Questioni Fondamentali - 1</h2>
+           
+           <div class="question-card">
+               <h3>1. Il rifiuto delle circostanze attenuanti a Bontems è giusto/ingiusto?</h3>
+           </div>
+           
+           <div style="margin-top: 40px;">
+               <div class="key-point" style="background: #e7f3ff; border-color: #1e3a5f;">
+                   <h4>📜 Aristotele</h4>
+                   <p>Proporzionalità della sanzione, non l'applicazione meccanica</p>
+               </div>
+               
+               <div class="key-point" style="background: #e7f3ff; border-color: #1e3a5f;">
+                   <h4>⚖️ Ulpiano</h4>
+                   <p>La giustizia è "la volontà costante e perseverante di dare a ciascuno il diritto che gli spetta"</p>
+               </div>
+               
+               <div class="key-point" style="background: #e7f3ff; border-color: #1e3a5f;">
+                   <h4>🏛️ Montesquieu</h4>
+                   <p>Per prendere una decisione 'giusta' è necessaria una forza metafisica e trascendentale inserita in un quadro normativo che freni l'arbitrarietà umana</p>
+               </div>
+           </div>
+           <span class="slide-number">14/21</span>
+       </div>
+       
+       <!-- Slide 15: Questione 2 -->
+       <div class="slide" id="slide15">
+           <h2>Questioni Fondamentali - 2</h2>
+           
+           <div class="question-card">
+               <h3>2. L'opinione pubblica, i media, la politica influenzano decisioni giudiziarie?</h3>
+           </div>
+           
+           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px;">
+               <div style="text-align: center; padding: 30px; background: #fff3cd; border-radius: 10px;">
+                   <div style="font-size: 48px; margin-bottom: 10px;">📰</div>
+                   <h4>Media</h4>
+                   <p>Pressione mediatica e costruzione dell'opinione pubblica</p>
+               </div>
+               <div style="text-align: center; padding: 30px; background: #fff3cd; border-radius: 10px;">
+                   <div style="font-size: 48px; margin-bottom: 10px;">👥</div>
+                   <h4>Opinione Pubblica</h4>
+                   <p>63% favorevole alla pena di morte nel caso Bontems</p>
+               </div>
+               <div style="text-align: center; padding: 30px; background: #fff3cd; border-radius: 10px;">
+                   <div style="font-size: 48px; margin-bottom: 10px;">🏛️</div>
+                   <h4>Politica</h4>
+                   <p>Decisioni influenzate dal periodo pre-elettorale</p>
+               </div>
+           </div>
+           
+           <div class="highlight-box" style="margin-top: 30px;">
+               <strong>Riflessione:</strong> La giustizia dovrebbe essere impermeabile alle pressioni esterne, ma la realtà dimostra quanto sia difficile mantenere questa indipendenza.
+           </div>
+           <span class="slide-number">15/21</span>
+       </div>
+       
+       <!-- Slide 16: Questione 3 -->
+       <div class="slide" id="slide16">
+           <h2>Questioni Fondamentali - 3</h2>
+           
+           <div class="question-card">
+               <h3>3. Le immagini sono più espressive dello scritto?</h3>
+               <p>Come afferma Klaus Röhl, perché creano immagini nella mente e possono suscitare impulsi morali?</p>
+           </div>
+           
+           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin-top: 40px;">
+               <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; text-align: center;">
+                   <h4>📚 Testo Scritto</h4>
+                   <ul style="list-style: none; padding: 0; text-align: left;">
+                       <li>✓ Precisione</li>
+                       <li>✓ Analisi dettagliata</li>
+                       <li>✓ Riflessione</li>
+                   </ul>
+               </div>
+               <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; text-align: center;">
+                   <h4>🎬 Film</h4>
+                   <ul style="list-style: none; padding: 0; text-align: left;">
+                       <li>✓ Emozione immediata</li>
+                       <li>✓ Identificazione</li>
+                       <li>✓ Memoria visiva</li>
+                   </ul>
+               </div>
+               <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; text-align: center;">
+                   <h4>🎨 Fumetti</h4>
+                   <ul style="list-style: none; padding: 0; text-align: left;">
+                       <li>✓ Sintesi visiva</li>
+                       <li>✓ Simbolismo</li>
+                       <li>✓ Impatto grafico</li>
+                   </ul>
+               </div>
+           </div>
+           <span class="slide-number">16/21</span>
+       </div>
+       
+       <!-- Slide 17: Questione finale -->
+       <div class="slide" id="slide17">
+           <h2>La Questione più Difficile</h2>
+           
+           <div class="question-card" style="background: linear-gradient(135deg, #8B4513 0%, #1e3a5f 100%);">
+               <h3 style="font-size: 36px;">4. Il diritto può/dev'essere giusto?</h3>
+           </div>
+           
+           <div style="margin-top: 50px;">
+               <div class="quote-box">
+                   <h4>La tensione eterna tra:</h4>
+                   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px;">
+                       <div>
+                           <h5 style="color: #1e3a5f;">📜 DIRITTO POSITIVO</h5>
+                           <ul>
+                               <li>Certezza giuridica</li>
+                               <li>Prevedibilità</li>
+                               <li>Applicazione uniforme</li>
+                           </ul>
+                       </div>
+                       <div>
+                           <h5 style="color: #8B4513;">⚖️ GIUSTIZIA SOSTANZIALE</h5>
+                           <ul>
+                               <li>Equità</li>
+                               <li>Proporzionalità</li>
+                               <li>Considerazione del caso concreto</li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="highlight-box" style="background: #2c3e50; color: white; margin-top: 30px;">
+               <strong>Il caso Bontems ci interroga:</strong> Quando il diritto formale porta all'ingiustizia sostanziale, qual è il ruolo della coscienza giuridica?
+           </div>
+           <span class="slide-number">17/21</span>
+       </div>
+       
+       <!-- Slide 18: Riflessioni finali -->
+       <div class="slide" id="slide18">
+           <h2>Riflessioni Conclusive</h2>
+           
+           <div style="margin-top: 40px;">
+               <div class="key-point" style="font-size: 20px; padding: 30px;">
+                   <strong>🎭 L'arte come testimone della giustizia</strong><br>
+                   Letteratura, cinema e fumetti non solo documentano, ma interrogano e sfidano il sistema giudiziario
+               </div>
+               
+               <div class="key-point" style="font-size: 20px; padding: 30px;">
+                   <strong>⚖️ La responsabilità della memoria</strong><br>
+                   Il caso Bontems rimane paradigmatico per comprendere i rischi dell'errore giudiziario irreversibile
+               </div>
+               
+               <div class="key-point" style="font-size: 20px; padding: 30px;">
+                   <strong>🔄 Dal 1972 al 1981</strong><br>
+                   Il percorso dall'esecuzione di Bontems all'abolizione della pena di morte: una lezione di civiltà giuridica
+               </div>
+           </div>
+           
+           <div class="quote-box" style="margin-top: 40px; background: #8B4513; color: white; border-color: white;">
+               <p style="font-size: 22px; text-align: center; color: white;">
+                   "La giustizia senza forza è impotente, la forza senza giustizia è tirannica"
+                   <br><small>- Blaise Pascal</small>
+               </p>
+           </div>
+           <span class="slide-number">18/21</span>
+       </div>
+       
+       <!-- Slide 19: Impatto storico -->
+       <div class="slide" id="slide19">
+           <h2>L'eredità di Robert Badinter</h2>
+           
+           <div style="text-align: center; margin: 40px 0;">
+               <div style="display: inline-block; padding: 30px; background: #1e3a5f; color: white; border-radius: 10px;">
+                   <h3 style="color: white; font-size: 36px;">1928 - 2024</h3>
+                   <p style="font-size: 20px;">Una vita dedicata alla giustizia e ai diritti umani</p>
+               </div>
+           </div>
+           
+           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+               <div>
+                   <h3>Il percorso</h3>
+                   <ul style="font-size: 18px; line-height: 2;">
+                       <li><strong>1972:</strong> Difesa di Bontems</li>
+                       <li><strong>1973:</strong> Pubblicazione de "L'Exécution"</li>
+                       <li><strong>1981:</strong> Ministro della Giustizia</li>
+                       <li><strong>9 ottobre 1981:</strong> Abolizione della pena di morte</li>
+                   </ul>
+               </div>
+               <div>
+                   <h3>L'eredità</h3>
+                   <ul style="font-size: 18px; line-height: 2;">
+                       <li>🏛️ Riforma del sistema giudiziario</li>
+                       <li>📚 Testimonianza letteraria</li>
+                       <li>🎬 Ispirazione artistica</li>
+                       <li>⚖️ Esempio di integrità morale</li>
+                   </ul>
+               </div>
+           </div>
+           
+           <div class="highlight-box" style="margin-top: 30px;">
+               <strong>Dal caso particolare al principio universale:</strong> La vicenda di Bontems diventa simbolo della lotta contro la pena capitale
+           </div>
+           <span class="slide-number">19/21</span>
+       </div>
+       
+       <!-- Slide 20: Per il dibattito -->
+       <div class="slide" id="slide20">
+           <h2>Spunti per il Dibattito</h2>
+           
+           <div style="display: grid; gap: 20px; margin-top: 40px;">
+               <div class="question-card" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">
+                   <h3>🤔 Domanda 1</h3>
+                   <p>Come può l'arte influenzare la percezione pubblica della giustizia?</p>
+               </div>
+               
+               <div class="question-card" style="background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);">
+                   <h3>💭 Domanda 2</h3>
+                   <p>Quale responsabilità hanno gli artisti nel rappresentare casi giudiziari reali?</p>
+               </div>
+               
+               <div class="question-card" style="background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);">
+                   <h3>🔍 Domanda 3</h3>
+                   <p>La complicità senza azione diretta giustifica la stessa pena del colpevole principale?</p>
+               </div>
+               
+               <div class="question-card" style="background: linear-gradient(135deg, #e83e8c 0%, #c2185b 100%);">
+                   <h3>⚖️ Domanda 4</h3>
+                   <p>Come bilanciare l'indipendenza della magistratura con la pressione dell'opinione pubblica?</p>
+               </div>
+           </div>
+           <span class="slide-number">20/21</span>
+       </div>
+       
+       <!-- Slide 21: Conclusione -->
+       <div class="slide final-slide" id="slide21">
+           <h1>GRAZIE!</h1>
+           <p>Ora è giunto il momento<br>del dibattito!</p>
+           
+           <div style="margin-top: 60px;">
+               <p style="font-size: 18px; color: #7f8c8d;">
+                   Alexandra Juster<br>
+                   Università di Innsbruck<br>
+                   <br>
+                   Workshop "Il racconto della giustizia"<br>
+                   Università di Brescia • 28-29 ottobre 2025
+               </p>
+           </div>
+           <span class="slide-number">21/21</span>
+       </div>
+   </div>
+   
+   <!-- Navigation -->
+   <div class="navigation">
+       <button class="nav-btn" onclick="previousSlide()">← Precedente</button>
+       <button class="nav-btn" onclick="nextSlide()">Successiva →</button>
+   </div>
+   
+   <script>
+       let currentSlide = 1;
+       const totalSlides = 21;
+       
+       function showSlide(n) {
+           const slides = document.querySelectorAll('.slide');
+           if (n > totalSlides) currentSlide = 1;
+           if (n < 1) currentSlide = totalSlides;
+           
+           slides.forEach(slide => {
+               slide.style.display = 'none';
+           });
+           
+           if (slides[currentSlide - 1]) {
+               slides[currentSlide - 1].style.display = 'block';
+               slides[currentSlide - 1].scrollIntoView({ behavior: 'smooth' });
+           }
+       }
+       
+       function nextSlide() {
+           currentSlide++;
+           showSlide(currentSlide);
+       }
+       
+       function previousSlide() {
+           currentSlide--;
+           showSlide(currentSlide);
+       }
+       
+       // Keyboard navigation
+       document.addEventListener('keydown', (e) => {
+           if (e.key === 'ArrowRight') nextSlide();
+           if (e.key === 'ArrowLeft') previousSlide();
+       });
+       
+       // Initialize
+       showSlide(1);
+   </script>
+</body>
+</html>
