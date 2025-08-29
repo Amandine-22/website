@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Le Triangle et l'Hexagone - Présentation</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       
+       body {
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           background: linear-gradient(135deg, #D2691E 0%, #FF8C00 50%, #FFD700 100%);
+           overflow: hidden;
+           color: #333;
+       }
+       
+       .presentation-container {
+           width: 100vw;
+           height: 100vh;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           position: relative;
+       }
+       
+       .slide {
+           width: 90%;
+           max-width: 1200px;
+           height: 85vh;
+           background: linear-gradient(135deg, #FFF8DC 0%, #FAEBD7 100%);
+           border-radius: 20px;
+           box-shadow: 0 20px 60px rgba(139, 69, 19, 0.4);
+           padding: 60px;
+           display: none;
+           animation: slideIn 0.5s ease-out;
+           overflow-y: auto;
+           border: 3px solid #8B4513;
+           text-align: center;
+           flex-direction: column;
+           justify-content: center;
+       }
+       
+       .slide.active {
+           display: flex;
+       }
+       
+       @keyframes slideIn {
+           from {
+               opacity: 0;
+               transform: translateX(50px);
+           }
+           to {
+               opacity: 1;
+               transform: translateX(0);
+           }
+       }
+       
+       .slide h1 {
+           color: #8B4513;
+           font-size: 3em;
+           margin-bottom: 40px;
+           border-bottom: none;
+           padding-bottom: 0;
+       }
+       
+       .slide h2 {
+           color: #D2691E;
+           font-size: 2.2em;
+           margin-bottom: 35px;
+       }
+       
+       .slide h3 {
+           color: #A0522D;
+           font-size: 1.8em;
+           margin-bottom: 25px;
+       }
+       
+       .slide p {
+           font-size: 1.5em;
+           line-height: 1.8;
+           margin-bottom: 20px;
+           color: #5D4E37;
+       }
+       
+       .slide ul {
+           list-style: none;
+           margin: 0;
+           padding: 0;
+           text-align: center;
+       }
+       
+       .slide li {
+           font-size: 1.4em;
+           line-height: 1.8;
+           margin-bottom: 15px;
+           color: #5D4E37;
+       }
+       
+       .slide li:before {
+           content: "• ";
+           color: #D2691E;
+           font-weight: bold;
+       }
+       
+       .subtitle {
+           font-size: 1.6em;
+           color: #A0522D;
+           margin-bottom: 30px;
+       }
+       
+       .author {
+           font-size: 1.4em;
+           color: #D2691E;
+           margin-top: 50px;
+           font-weight: bold;
+       }
+       
+       .navigation {
+           position: fixed;
+           bottom: 30px;
+           left: 50%;
+           transform: translateX(-50%);
+           display: flex;
+           gap: 20px;
+           z-index: 1000;
+       }
+       
+       .nav-btn {
+           padding: 12px 25px;
+           background: #FFF8DC;
+           color: #8B4513;
+           border: 2px solid #8B4513;
+           border-radius: 30px;
+           cursor: pointer;
+           font-size: 1em;
+           transition: all 0.3s;
+           font-weight: bold;
+       }
+       
+       .nav-btn:hover {
+           background: #D2691E;
+           color: white;
+           transform: scale(1.05);
+       }
+       
+       .nav-btn:disabled {
+           opacity: 0.3;
+           cursor: not-allowed;
+       }
+       
+       .slide-number {
+           position: fixed;
+           top: 30px;
+           right: 30px;
+           background: #FFF8DC;
+           padding: 10px 20px;
+           border-radius: 20px;
+           color: #8B4513;
+           font-weight: bold;
+           box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+           border: 2px solid #D2691E;
+       }
+       
+       .quote {
+           font-style: italic;
+           font-size: 1.6em;
+           color: #8B4513;
+           margin: 30px auto;
+           max-width: 80%;
+           padding: 20px;
+           border-left: 5px solid #D2691E;
+           text-align: left;
+       }
+       
+       .highlight {
+           color: #D2691E;
+           font-weight: bold;
+       }
+       
+       @media (max-width: 768px) {
+           .slide {
+               padding: 30px;
+           }
+           .slide h1 {
+               font-size: 2em;
+           }
+       }
+   </style>
+</head>
+<body>
+   <div class="presentation-container">
+       <div class="slide-number">
+           <span id="current-slide">1</span> / <span id="total-slides">12</span>
+       </div>
+       
+       <!-- Slide 1: Titre -->
+       <div class="slide active">
+           <h1>Le Triangle et l'Hexagone</h1>
+           <p class="subtitle">Mobilité sociale, expérience transatlantique<br>et construction d'une identité noire en France</p>
+           <p class="subtitle">Analyse de l'œuvre de Maboula Soumahoro (2020)</p>
+           <p class="author">Dr. Alexandra JUSTER<br>Université d'Innsbruck</p>
+       </div>
+       
+       <!-- Slide 2: Introduction -->
+       <div class="slide">
+           <h1>Introduction</h1>
+           <h2>Une œuvre hybride et novatrice</h2>
+           <ul>
+               <li><span class="highlight">Récit autobiographique</span> et analyse académique</li>
+               <li>Exploration de l'identité noire en France</li>
+               <li>Confrontation expérience personnelle / <em>Black Studies</em></li>
+           </ul>
+           <p style="margin-top: 40px; font-size: 1.3em;">
+               <span class="highlight">Triangle</span> = Traite transatlantique<br>
+               <span class="highlight">Hexagone</span> = France métropolitaine
+           </p>
+       </div>
+       
+       <!-- Slide 3: Présentation de l'auteure -->
+       <div class="slide">
+           <h1>Maboula Soumahoro</h1>
+           <h2>Parcours</h2>
+           <ul>
+               <li>Parents dioula de Côte d'Ivoire</li>
+               <li>Enfance en cité HLM parisienne</li>
+               <li>Doctorat et 10 ans aux États-Unis</li>
+               <li>Maîtresse de conférences à Tours</li>
+               <li>Présidente de <em>Black History Month</em></li>
+           </ul>
+           <div class="quote">
+               "Je me définis comme noire comme je le décide"
+           </div>
+       </div>
+       
+       <!-- Slide 4: Problématique -->
+       <div class="slide">
+           <h1>Problématiques centrales</h1>
+           <h2>Trois axes d'analyse</h2>
+           <p style="font-size: 1.8em; margin: 30px 0;">
+               <span class="highlight">1. La mobilité transclasse</span>
+           </p>
+           <p style="font-size: 1.8em; margin: 30px 0;">
+               <span class="highlight">2. L'identité noire et la diaspora</span>
+           </p>
+           <p style="font-size: 1.8em; margin: 30px 0;">
+               <span class="highlight">3. Le racisme structurel</span>
+           </p>
+       </div>
+       
+       <!-- Slide 5: Genre autobiographique -->
+       <div class="slide">
+           <h1>L'autobiographie</h1>
+           <h2>Genre littéraire</h2>
+           <p><span class="highlight">Lejeune :</span> Pacte autobiographique</p>
+           <p><span class="highlight">Genette :</span> Engagement de sérieux</p>
+           <p style="margin-top: 40px;">Tradition de l'auto-socio-biographie :</p>
+           <p>Annie Ernaux • Didier Eribon • Édouard Louis</p>
+           <div class="quote">
+               "Un fossé entre les événements vécus<br>et leur représentation linguistique"
+           </div>
+       </div>
+       
+       <!-- Slide 6: Transfuge de classe -->
+       <div class="slide">
+           <h1>Le transclasse</h1>
+           <h2>Entre deux mondes</h2>
+           <p style="font-size: 1.6em; margin-bottom: 30px;">
+               <span class="highlight">Passage d'une classe sociale à l'autre</span>
+           </p>
+           <ul>
+               <li>La langue : outil et aliénation</li>
+               <li>Le malaise du transfuge</li>
+               <li>Double non-appartenance</li>
+           </ul>
+           <div class="quote">
+               "Une langue qui n'est pas celle de ma mère"
+           </div>
+       </div>
+       
+       <!-- Slide 7: Diaspora et identité noire -->
+       <div class="slide">
+           <h1>Diaspora africaine</h1>
+           <h2>France vs États-Unis</h2>
+           <p style="font-size: 1.6em; margin: 30px 0;">
+               <span class="highlight">États-Unis :</span> Revendication assumée
+           </p>
+           <p style="font-size: 1.6em; margin: 30px 0;">
+               <span class="highlight">France :</span> Déni républicain
+           </p>
+           <div class="quote">
+               "Le corps noir : seules traces, seuls indices"
+           </div>
+       </div>
+       
+       <!-- Slide 8: Black Studies -->
+       <div class="slide">
+           <h1>Black Studies</h1>
+           <h2>Un tournant épistémologique</h2>
+           <ul>
+               <li>Découverte aux États-Unis</li>
+               <li>Outils conceptuels nouveaux</li>
+               <li>Légitimation identitaire</li>
+               <li>Absence en France</li>
+           </ul>
+           <p style="margin-top: 40px; font-size: 1.4em;">
+               <span class="highlight">Impact :</span> Négritude décomplexée
+           </p>
+       </div>
+       
+       <!-- Slide 9: Racisme structurel -->
+       <div class="slide">
+           <h1>Le racisme en France</h1>
+           <h2>Violence du silence</h2>
+           <p style="font-size: 1.6em; margin: 30px 0;">
+               <span class="highlight">"Racisme sans race"</span>
+           </p>
+           <ul>
+               <li>Tabou républicain</li>
+               <li>Déni structurel</li>
+               <li>Micro-agressions quotidiennes</li>
+           </ul>
+           <div class="quote">
+               "Je suis la France. Aussi."
+           </div>
+       </div>
+       
+       <!-- Slide 10: Analyse comparative -->
+       <div class="slide">
+           <h1>Deux modèles opposés</h1>
+           <p style="font-size: 1.8em; margin: 30px 0;">
+               <span class="highlight">France</span><br>
+               Universalisme • Négation • Silence
+           </p>
+           <p style="font-size: 1.8em; margin: 30px 0;">
+               <span class="highlight">États-Unis</span><br>
+               Reconnaissance • Affirmation • Débat
+           </p>
+           <div class="quote">
+               "Hyper-visibilité vs aveuglement"
+           </div>
+       </div>
+       
+       <!-- Slide 11: Enjeux et perspectives -->
+       <div class="slide">
+           <h1>Enjeux contemporains</h1>
+           <h2>L'urgence de nommer</h2>
+           <ul>
+               <li>Reconnaissance de l'identité noire</li>
+               <li>Confrontation au passé colonial</li>
+               <li>Identité biculturelle</li>
+               <li>Études diasporiques en France</li>
+           </ul>
+           <p style="margin-top: 40px; font-size: 1.4em;">
+               <span class="highlight">Une nation sur l'amnésie<br>se condamne aux explosions</span>
+           </p>
+       </div>
+       
+       <!-- Slide 12: Conclusion -->
+       <div class="slide">
+           <h1>Conclusion</h1>
+           <h2>Triple apport de Soumahoro</h2>
+           <p style="font-size: 1.6em; margin: 30px 0;">
+               <span class="highlight">1. Témoignage personnel</span>
+           </p>
+           <p style="font-size: 1.6em; margin: 30px 0;">
+               <span class="highlight">2. Analyse académique</span>
+           </p>
+           <p style="font-size: 1.6em; margin: 30px 0;">
+               <span class="highlight">3. Manifeste politique</span>
+           </p>
+           <div class="quote">
+               "Les non-dits d'hier<br>deviennent les explosions de demain"
+           </div>
+           <p class="author">Merci pour votre attention</p>
+       </div>
+   </div>
+   
+   <div class="navigation">
+       <button class="nav-btn" id="prev-btn" onclick="changeSlide(-1)">← Précédent</button>
+       <button class="nav-btn" id="next-btn" onclick="changeSlide(1)">Suivant →</button>
+   </div>
+   
+   <script>
+       let currentSlide = 1;
+       const totalSlides = 12;
+       
+       function showSlide(n) {
+           const slides = document.getElementsByClassName('slide');
+           
+           if (n > totalSlides) currentSlide = 1;
+           if (n < 1) currentSlide = totalSlides;
+           
+           for (let i = 0; i < slides.length; i++) {
+               slides[i].classList.remove('active');
+           }
+           
+           slides[currentSlide - 1].classList.add('active');
+           
+           document.getElementById('current-slide').textContent = currentSlide;
+           
+           // Update navigation buttons
+           document.getElementById('prev-btn').disabled = currentSlide === 1;
+           document.getElementById('next-btn').disabled = currentSlide === totalSlides;
+       }
+       
+       function changeSlide(n) {
+           currentSlide += n;
+           showSlide(currentSlide);
+       }
+       
+       // Keyboard navigation
+       document.addEventListener('keydown', function(e) {
+           if (e.key === 'ArrowLeft') changeSlide(-1);
+           if (e.key === 'ArrowRight') changeSlide(1);
+       });
+       
+       // Initialize
+       document.getElementById('total-slides').textContent = totalSlides;
+       showSlide(1);
+   </script>
+</body>
+</html>
