@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Artistic Freedom Threatened in Italy</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       
+       body {
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           background: linear-gradient(135deg, #008C45 0%, #CD212A 100%);
+           min-height: 100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 20px;
+       }
+       
+       .presentation-container {
+           max-width: 1200px;
+           width: 100%;
+           background: white;
+           border-radius: 20px;
+           box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+           overflow: hidden;
+       }
+       
+       .header {
+           background: linear-gradient(135deg, #008C45 0%, #CD212A 100%);
+           color: white;
+           padding: 40px;
+           text-align: center;
+       }
+       
+       .header h1 {
+           font-size: 2.5em;
+           margin-bottom: 15px;
+           text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+       }
+       
+       .header .subtitle {
+           font-size: 1.3em;
+           opacity: 0.95;
+           margin-bottom: 20px;
+       }
+       
+       .author {
+           font-size: 1.1em;
+           font-style: italic;
+           opacity: 0.9;
+       }
+       
+       .content {
+           padding: 40px;
+       }
+       
+       .section {
+           margin-bottom: 40px;
+           opacity: 0;
+           animation: fadeIn 0.8s forwards;
+       }
+       
+       .section:nth-child(1) { animation-delay: 0.2s; }
+       .section:nth-child(2) { animation-delay: 0.4s; }
+       .section:nth-child(3) { animation-delay: 0.6s; }
+       .section:nth-child(4) { animation-delay: 0.8s; }
+       
+       @keyframes fadeIn {
+           to {
+               opacity: 1;
+           }
+       }
+       
+       .section-title {
+           color: #CD212A;
+           font-size: 1.8em;
+           margin-bottom: 20px;
+           display: flex;
+           align-items: center;
+           gap: 15px;
+       }
+       
+       .icon {
+           width: 40px;
+           height: 40px;
+           background: linear-gradient(135deg, #008C45 0%, #CD212A 100%);
+           border-radius: 50%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: white;
+           font-size: 1.5em;
+       }
+       
+       .key-point {
+           background: #f8f9fa;
+           border-left: 4px solid #CD212A;
+           padding: 20px;
+           margin: 15px 0;
+           border-radius: 5px;
+           position: relative;
+           transition: transform 0.3s;
+       }
+       
+       .key-point:hover {
+           transform: translateX(5px);
+           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+       }
+       
+       .quote-box {
+           background: linear-gradient(135deg, rgba(0,140,69,0.1) 0%, rgba(205,33,42,0.1) 100%);
+           border-radius: 10px;
+           padding: 25px;
+           margin: 20px 0;
+           border: 2px solid rgba(205,33,42,0.3);
+           font-style: italic;
+           position: relative;
+       }
+       
+       .quote-box::before {
+           content: "❝";
+           position: absolute;
+           top: -10px;
+           left: 20px;
+           font-size: 3em;
+           color: rgba(205,33,42,0.3);
+       }
+       
+       .timeline {
+           display: flex;
+           justify-content: space-between;
+           margin: 30px 0;
+           flex-wrap: wrap;
+           gap: 20px;
+       }
+       
+       .timeline-item {
+           flex: 1;
+           min-width: 200px;
+           text-align: center;
+           padding: 20px;
+           background: #f8f9fa;
+           border-radius: 10px;
+           transition: all 0.3s;
+       }
+       
+       .timeline-item:hover {
+           background: linear-gradient(135deg, rgba(0,140,69,0.1) 0%, rgba(205,33,42,0.1) 100%);
+           transform: scale(1.05);
+       }
+       
+       .timeline-date {
+           color: #CD212A;
+           font-weight: bold;
+           font-size: 1.2em;
+           margin-bottom: 10px;
+       }
+       
+       .highlight {
+           background: linear-gradient(to right, rgba(0,140,69,0.2), rgba(205,33,42,0.2));
+           padding: 2px 6px;
+           border-radius: 3px;
+       }
+       
+       .conclusion {
+           background: linear-gradient(135deg, #008C45 0%, #CD212A 100%);
+           color: white;
+           padding: 30px;
+           border-radius: 10px;
+           margin-top: 40px;
+           text-align: center;
+       }
+       
+       .conclusion h3 {
+           font-size: 1.5em;
+           margin-bottom: 15px;
+       }
+       
+       ul {
+           list-style: none;
+           padding-left: 0;
+       }
+       
+       ul li {
+           padding-left: 30px;
+           margin: 10px 0;
+           position: relative;
+       }
+       
+       ul li::before {
+           content: "→";
+           position: absolute;
+           left: 0;
+           color: #CD212A;
+           font-weight: bold;
+       }
+   </style>
+</head>
+<body>
+   <div class="presentation-container">
+       <div class="header">
+           <h1>Artistic Freedom and Expression Threatened in Italy</h1>
+           <div class="subtitle">The 'Antonio Scurati Case'</div>
+           <div class="author">Dr. Mag. jur. Alexandra JUSTER - University of Innsbruck</div>
+       </div>
+       
+       <div class="content">
+           <div class="section">
+               <h2 class="section-title">
+                   <span class="icon">⚡</span>
+                   The Triggering Event
+               </h2>
+               <div class="timeline">
+                   <div class="timeline-item">
+                       <div class="timeline-date">April 25, 2024</div>
+                       <div>Commemoration of Italy's liberation from fascism</div>
+                   </div>
+                   <div class="timeline-item">
+                       <div class="timeline-date">Censorship</div>
+                       <div>Cancellation of Scurati's invitation on Rai 3</div>
+                   </div>
+                   <div class="timeline-item">
+                       <div class="timeline-date">Response</div>
+                       <div>Viral spread of the banned speech</div>
+                   </div>
+               </div>
+               <div class="quote-box">
+                   "Until that word - antifascism - is pronounced by those who govern us, the specter of fascism will continue to haunt the house of Italian democracy"
+                   <div style="text-align: right; margin-top: 10px; font-style: normal;">- Antonio Scurati</div>
+               </div>
+           </div>
+           
+           <div class="section">
+               <h2 class="section-title">
+                   <span class="icon">⚖️</span>
+                   Legal Framework Analysis
+               </h2>
+               <div class="key-point">
+                   <strong>Article 10 ECHR:</strong> Protection of freedom of expression, including <span class="highlight">offensive, shocking and disturbing statements</span> necessary for democratic debate
+               </div>
+               <div class="key-point">
+                   <strong>Italian Constitution:</strong>
+                   <ul>
+                       <li>Art. 21: Freedom of expression through all means of dissemination</li>
+                       <li>Art. 33: "Art and science are free"</li>
+                       <li>Art. 9: Promotion of cultural and scientific development</li>
+                   </ul>
+               </div>
+               <div class="key-point">
+                   <strong>Anti-SLAPP Directive (2024):</strong> Protection of individuals expressing themselves on matters of public interest against <span class="highlight">abusive lawsuits</span>
+               </div>
+           </div>
+           
+           <div class="section">
+               <h2 class="section-title">
+                   <span class="icon">🎭</span>
+                   Double Violation Identified
+               </h2>
+               <div class="key-point">
+                   <strong>1. Freedom of Expression as a Citizen:</strong>
+                   <ul>
+                       <li>Right to hold and express political opinions</li>
+                       <li>Democratic "watchdog" function</li>
+                       <li>Legitimate criticism based on verifiable historical facts</li>
+                   </ul>
+               </div>
+               <div class="key-point">
+                   <strong>2. Artistic Freedom as a Writer:</strong>
+                   <ul>
+                       <li>Literary expression as a form of resistance</li>
+                       <li>Enhanced protection against state intervention</li>
+                       <li>Legitimate use of literary means for political engagement</li>
+                   </ul>
+               </div>
+           </div>
+           
+           <div class="section">
+               <h2 class="section-title">
+                   <span class="icon">⚠️</span>
+                   Concerning Context
+               </h2>
+               <div class="key-point">
+                   <strong>Other Censorship Cases in Italy:</strong>
+                   <ul>
+                       <li>Roberto Saviano: show cancelled, defamation prosecutions</li>
+                       <li>3 journalists from Domani: risk 9 years in prison</li>
+                       <li>Artist Tvboy: murals censored</li>
+                   </ul>
+               </div>
+               <div class="key-point">
+                   <strong>Worrying European Trends:</strong>
+                   <ul>
+                       <li>179 acts of censorship in Europe (2018-2019)</li>
+                       <li>978 global violations of artistic freedom (2020)</li>
+                       <li>Similar cases in Spain, France, Poland and Hungary</li>
+                   </ul>
+               </div>
+           </div>
+           
+           <div class="conclusion">
+               <h3>Conclusion</h3>
+               <p>The ban on Scurati's speech constitutes a <strong>manifest violation</strong> of fundamental rights guaranteed by Italian, European and international law. This case reveals a <strong>worrying widening of the gap</strong> between democratic rule of law and political practice in Italy, signaling <strong>authoritarian drifts</strong> that threaten the very foundations of European democracy.</p>
+               <div style="margin-top: 25px; padding-top: 20px; border-top: 2px solid rgba(255,255,255,0.3);">
+                   <p style="font-size: 0.95em; margin-bottom: 10px;">
+                       <strong>Published in:</strong>
+                   </p>
+                   <p style="font-size: 1.1em;">
+                       Law & Literature Review, No. 9, Dalloz, 2025
+                   </p>
+                   <p style="margin-top: 10px;">
+                       <a href="https://www.nxtbook.com/lextenso-editions/LGDJ/978-2-275-15878-5/index.php?ap=1"
+                          style="color: white; text-decoration: underline; font-size: 0.95em;"
+                          target="_blank">
+                           Access publication contents →
+                       </a>
+                   </p>
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>
