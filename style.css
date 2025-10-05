@@ -139,7 +139,7 @@ section#published img{
     
 }
 
-.Book1, .Book2, .Book3, .Book4{
+.Book1, .Book2, .Book3, .Book4, .Book5{
     display: flex;
     gap: 30px;
     align-items: center;
@@ -313,6 +313,49 @@ section#News a {
     text-transform: none;
     color: inherit;
 }
+
+.text-newbook{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 750px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.announce{
+    display:flex;
+    gap: 20px;
+    box-shadow: 0 4px 16px rgb(160, 160, 160);
+    border-radius: 10px;
+    background-color: brown;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin: auto;
+    margin-bottom: 40px;
+    text-align: justify;
+    width: 450px;
+}
+
+.announce:hover{
+    background-color: rgb(135, 29, 29);
+}
+.announce a{
+    display: flex;
+    align-items: center;
+}
+
+.announce img{
+    max-width: 320px;
+    align-items: center;
+    height: auto;
+}
+
+
 
 .news-grid {
     display: grid;
