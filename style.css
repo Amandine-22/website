@@ -528,6 +528,10 @@ section#News a {
     margin-bottom: 10px;
 }
 
+.news-title:hover{
+    text-decoration: underline;
+}
+
 .news-description {
     padding: 5px;
     text-align: justify;
@@ -551,6 +555,31 @@ section#News a {
 
 .button:hover {
     background-color: #8B4513;
+}
+
+.text-wrapper{
+    position: relative;
+}
+
+.news-description{
+    display: inline-block;
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.news-description.show{
+    max-height: 1000px; 
+}
+
+.toggle{
+    color: brown;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle:hover {
+    text-decoration: underline;
 }
 
 /* Media queries pour les différentes tailles d'écran */

@@ -25,3 +25,22 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
         overlay.classList.remove('active');
     });
 });
+
+const textContent = document.getElementById('textContent');
+const voirPlusBtn = document.getElementById('voirPlusBtn'); 
+const fadeOverlay = document.getElementById('fadeOverlay');
+
+voirPlusBtn.addEventListener('click', function(event) {
+    event.preventDefault(); // AJOUTEZ CETTE LIGNE
+    event.stopPropagation();
+    if (textContent.classList.contains('expanded')){
+        textContent.classList.remove('expanded');
+        fadeOverlay.classList.remove('hidden'); 
+        voirPlusBtn.textContent = 'Voir plus'; 
+        window.scrollTo({ top: 0, behavior: 'smooth'});
+    } else{
+        textContent.classList.add('expanded');
+        fadeOverlay.classList.add('hidden'); 
+        voirPlusBtn.textContent = 'voir moins'; 
+    }
+});
