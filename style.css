@@ -257,6 +257,18 @@ section#published img:hover{
     filter: brightness(60%); /* ⬅️ rend l’image plus sombre au survol */
 }
 
+section#Accepted{
+    background-color: rgb(255, 255, 255);
+    margin : none;
+    padding : 40px 80px;
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+section#Accepted p{
+    font-size: 18px;
+}
+
 /* ARTICLES  */
 
 section#Published-articles{
@@ -376,6 +388,16 @@ section#Conferences a{
 .Date{
     color: brown;
     font-size: 22px;;
+}
+
+section#Conferences h3{
+    font-size: 18px;
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    padding-left: 10px;
+    color: white;
+    background-color: brown;
 }
 
 /* RESEARCHE PROJECT  */
