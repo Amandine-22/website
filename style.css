@@ -278,6 +278,9 @@ section#Accepted p{
     font-size: 18px;
 }
 
+section#Accepted a{
+    color: #000000;
+}
 /* ARTICLES  */
 
 section#Published-articles{
