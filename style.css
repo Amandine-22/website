@@ -616,6 +616,64 @@ section#News a {
     text-decoration: underline;
 }
 
+
+/* Galerie dans la carte */
+.gallery img:not(:first-of-type) {
+    display: none;
+}
+
+.gallery img:first-of-type {
+    cursor: zoom-in;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lb-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.lightbox button {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 40px;
+    padding: 15px;
+    transition: color 0.2s ease;
+}
+
+.lightbox button:hover {
+    color: brown;
+}
+
+.lb-close { top: 10px; right: 20px; }
+.lb-prev  { left: 10px;  top: 50%; transform: translateY(-50%); }
+.lb-next  { right: 10px; top: 50%; transform: translateY(-50%); }
+
+.lb-counter {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-size: 16px;
+}
+
 /* Media queries pour les différentes tailles d'écran */
 @media screen and (max-width: 768px) {
     section#News {

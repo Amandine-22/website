@@ -58,6 +58,44 @@
         <div class="news-grid">
 
             <div class="news-card">
+                <div class="news-date">03/10/2026</div>
+                
+    <div class="news-img gallery">
+    <img src="Pictures/St_Malo_1.jpeg" alt="Conférence à Saint-Malo, photo 1">
+    <img src="Pictures/St_Malo_2.jpeg" alt="Conférence à Saint-Malo, photo 2">
+    <img src="Pictures/St_Malo_3.jpeg" alt="Conférence à Saint-Malo, photo 3">
+    <button type="button" class="button gallery-open">See more</button>
+                </div>
+
+                    <div class="news-content">
+                        <div class="news-category"><em>New Conference</em></div>
+                        <div class="news-title"><a href="https://ds.hypotheses.org/19354">Review</a></div>
+                        <div class="text-wrapper">
+                        <span class="news-description">
+                        I had the pleasure of organising a workshop on the topic Premier news avec les trois photos: “Literature as a Seismograph for Contemporary Legal Developments and Needs” in Saint-Malo, France, from 23 to 26 October 2026. I would like to extend my warmest thanks to all the participants for the dynamic atmosphere! The atmosphere was fantastic, enriched by some very engaging presentations and debates, both characterised by a desire to bring law and literature together in an interdisciplinary way. I am confident that this gathering and the opportunity to get to know one another have laid the foundations for further joint projects and initiatives.
+                        </span>
+                        <span class="toggle" id="toggle">Show more</span>
+                    </div> 
+                </div>
+            </div>
+
+
+            <div class="news-card">
+                <div class="news-date">03/10/2026</div>
+                    <div class="news-content">
+                        <div class="news-category"><em>New Collective volume</em></div>
+                        <div class="news-title"><a href="https://ds.hypotheses.org/19354">Review</a></div>
+                        <div class="text-wrapper">
+                        <span class="news-description">
+                        I am pleased that I could inform all my contributors to our planned collective volume, "Criminalising Substantial Harm to Nature: Ecocide in Law and Literature", which I will be editing in 2027, that our project has been accepted for publication by Bloomsbury.
+This is good news worth sharing!
+                        </span>
+                        <span class="toggle" id="toggle">Show more</span>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="news-card">
                 <div class="news-date">04/07/2026</div>
                 <div class="news-img"><img src="Pictures/Book5.png"></div>
                     <div class="news-content">
@@ -318,11 +356,19 @@
                 </div> 
         </div>
         
+    <!-- FAIRE DEFILER DES IMAGES  -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" class="lb-close" aria-label="Fermer">&times;</button>
+    <button type="button" class="lb-prev" aria-label="Photo précédente">&#10094;</button>
+    <img class="lb-img" src="" alt="">
+    <button type="button" class="lb-next" aria-label="Photo suivante">&#10095;</button>
+    <div class="lb-counter"></div>
+    </div>
 
         
         </div>
         
-
 
     </section>
 
@@ -356,6 +402,57 @@
                     ? "Show less"
                     : "Show more";
             }); 
+        });
+
+
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = lightbox.querySelector('.lb-img');
+        const lbCounter = lightbox.querySelector('.lb-counter');
+        let currentImages = [];
+        let currentIndex = 0;
+
+        function showImage(index) {
+            currentIndex = (index + currentImages.length) % currentImages.length;
+            const img = currentImages[currentIndex];
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            lbCounter.textContent = (currentIndex + 1) + ' / ' + currentImages.length;
+        }
+
+        function openLightbox(images, index = 0) {
+            currentImages = images;
+            showImage(index);
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+        }
+
+        // Chaque galerie de la page
+        document.querySelectorAll('.gallery').forEach(gallery => {
+            const images = Array.from(gallery.querySelectorAll('img'));
+            gallery.querySelector('.gallery-open').addEventListener('click', () => openLightbox(images, 0));
+            images[0].addEventListener('click', () => openLightbox(images, 0));
+        });
+
+        lightbox.querySelector('.lb-close').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lb-prev').addEventListener('click', () => showImage(currentIndex - 1));
+        lightbox.querySelector('.lb-next').addEventListener('click', () => showImage(currentIndex + 1));
+
+        // Clic sur le fond noir = fermer
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // Clavier
+        document.addEventListener('keydown', e => {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentIndex + 1);
         });
         
     </script>
