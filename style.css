@@ -539,6 +539,12 @@ section#News a {
     border-radius: 8px;
 }
 
+#here-word:hover{
+    color: brown;
+    text-decoration: underline;
+
+}
+
 .news-content {
     padding: 15px;
     text-align: center;
